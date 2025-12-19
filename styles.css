@@ -1,0 +1,34 @@
+/* Base (already in your file)
+.card{ background:#0a0f1c; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; position:relative; transition:.18s }
+.thumb{ aspect-ratio:16/10; display:grid; place-items:end; padding:10px; background:linear-gradient(120deg, rgba(255,255,255,.06), rgba(255,255,255,.02)) }
+.pill{ background:rgba(0,0,0,.55); color:#fff; font-size:12px; padding:6px 8px; border-radius:20px; border:1px solid rgba(255,255,255,.08) }
+*/
+
+/* Melbourne-specific overrides */
+.card.melbourne{ 
+  background:#0b1a28;                 /* different card background */
+  border-color: rgba(91,140,255,.35);  /* subtle blue border */
+}
+.card.melbourne .thumb{
+  background: linear-gradient(135deg, rgba(91,140,255,.25), rgba(34,197,94,.18));
+}
+.card.melbourne .pill{
+  background: rgba(91,140,255,.35);
+  border-color: rgba(255,255,255,.12);
+}
+.card.melbourne .tag{
+  border-color: rgba(91,140,255,.35);
+  color:#c7d2fe;
+}
+Quick alternative (if you don’t want to touch HTML and the card position won’t change): target it by index.
+
+css
+Copy code
+/* If Melbourne is the 2nd card inside that grid */
+#projects .grid[role="list"] > .card:nth-child(2){
+  background:#0b1a28;
+  border-color: rgba(91,140,255,.35);
+}
+#projects .grid[role="list"] > .card:nth-child(2) .thumb{
+  background: linear-gradient(135deg, rgba(91,140,255,.25), rgba(34,197,94,.18));
+}
